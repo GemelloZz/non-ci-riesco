@@ -7,12 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class toppings {
-
-
+public class pizze {
     private String nome;
     private double prezzo ;
     private double calorie;
 
 }
-

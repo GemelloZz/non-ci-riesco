@@ -1,20 +1,30 @@
 package it.epicode.non.ci.riesco.pizzeria;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.awt.*;
 import java.util.Arrays;
 
+@RequiredArgsConstructor
 @Configuration
 public class Menuconf {
 
-    @Bean
-    public Menu menu() {
-     return new Menu(
-             Arrays.asList(
-                  new Pizza("margherita " , 12.22),
-             )
-     );
+    private final Bevande Cocacola ;
+    private final Bevande birra;
+    private final pizze Margherita;
+    private final pizze Diavola;
+    private final toppings Cipolla;
+    private final toppings Salame;
 
-    }
+   @Bean
+   public Menu menu() {
+       return new Menu(Arrays.asList(Margherita, Diavola),
+               Arrays.asList(Cocacola, birra),
+               Arrays.asList(Cipolla, Salame));
+
+   }
+
+
+
 }
+
